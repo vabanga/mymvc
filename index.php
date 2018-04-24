@@ -1,9 +1,18 @@
 <?php
 
-session_start();
+use Core\Router;
+
+
+define('ROOT', __DIR__);
 define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', dirname(__FILE__));
 
-$url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : [];
+require_once (ROOT . DS . 'app' . DS . 'lib' . DS . 'Dev.php');
 
-require_once (ROOT . DS . 'core' . DS . 'bootstrap.php');
+require_once (ROOT . DS . 'vendor' . DS . 'autoload.php');
+
+session_start();
+
+
+$router = new Router();
+
+$router->run();
