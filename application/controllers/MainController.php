@@ -9,7 +9,7 @@ use application\lib\Pagination;
 class MainController extends Controller {
 
     public function indexAction() {
-        $this->view->render('main');
+        $this->view->render('main', [], ['/public/styles/main.css']);
     }
 
 }
