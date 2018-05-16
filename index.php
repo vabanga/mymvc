@@ -1,18 +1,12 @@
 <?php
 
-use Core\Router;
+require 'application/lib/Dev.php';
 
-
-define('ROOT', __DIR__);
-define('DS', DIRECTORY_SEPARATOR);
-
-require_once (ROOT . DS . 'app' . DS . 'lib' . DS . 'Dev.php');
-
-require_once (ROOT . DS . 'vendor' . DS . 'autoload.php');
+use application\core\Router;
 
 session_start();
 
+require 'autoload.php';
 
-$router = new Router();
-
+$router = new Router;
 $router->run();
